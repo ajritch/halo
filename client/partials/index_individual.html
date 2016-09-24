@@ -1,0 +1,20 @@
+<h1>Show All Individuals</h1>
+<a href="#/individuals/new"><button>New Individual</button></a>
+<input type="text" name="search" ng-model="searchText">
+<hr>
+<table>
+	<tr >
+		<th>Name</th>
+		<th>Show</th>
+		<th>Update</th>
+		<th>Delete</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="individual in individuals | filter:searchText">
+		<td>{{individual.firstName}} {{individual.lastName}}</td>
+		<td><a ng-href="#/individuals/{{individual._id}}">Show</a></td>
+		<td><a ng-href="#/individuals/{{individual._id}}/edit">Update</a></td>
+		<td><a href="#" ng-click="delete(individual._id)">Delete</a></td>
+		<td><input type="hidden" value={{individual.birthday}}></td>
+	</tr>
+</table>

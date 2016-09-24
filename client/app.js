@@ -4,19 +4,19 @@ app.config(function ($routeProvider) {
     $routeProvider
     
     .when('/', {
-        templateUrl: '/partials/index.html',
+        templateUrl: '/partials/index_individual.html',
         controller: 'individualIndexController'
     })
     .when('/individuals/:id/edit', {
-        templateUrl: '/partials/edit.html',
+        templateUrl: '/partials/edit_individual.html',
         controller: 'individualEditController',
     })
     .when('/individuals/new', {
-        templateUrl: '/partials/new.html',
+        templateUrl: '/partials/new_individual.html',
         controller: 'individualNewController',
     })
     .when('/individuals/:id', {
-        templateUrl: '/partials/show.html',
+        templateUrl: '/partials/show_individual.html',
         controller: 'individualShowController',
     })
     .otherwise({

@@ -1,0 +1,9 @@
+<!-- You will attach an ng-model and an ng-submit to your forms (but might want to wait until the next tab, when you have your controllers and factory) -->
+<h1>Update Individual Info</h1>
+<form ng-submit="update()">
+  <label>First Name: <input type="text" name="firstName" ng-model="individual.firstName"></label>
+  <label>Last Name: <input type="text" name="lastName"  ng-model="individual.lastName"></label>
+  <label>Birthday: <input type="date" name="birthday"  ng-model="individual.birthday"></label>
+  <input type="submit" name="submit" value="Update">
+</form>
+<td><a ng-href="#/individuals">Back to Home</a></td>
