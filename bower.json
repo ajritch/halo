@@ -1,0 +1,17 @@
+{
+  "name": "halo",
+  "homepage": "https://github.com/jkspam2004/halo",
+  "authors": [
+    "jkspam2004 <jkspam2004@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
