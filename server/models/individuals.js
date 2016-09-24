@@ -3,15 +3,15 @@ var Schema = mongoose.Schema;
 
 var newSchema = new mongoose.Schema({
   first_name: { type: String },
-  middle_name: { type: String },
+  middle_name: { type: String, default: '' },
   last_name: { type: String },
-  alias: { type: String },
-  ethnicity: { type: String },
-  gender: { type: String },
+  alias: { type: String, default: '' },
+  ethnicity: { type: String, default: '' },
+  gender: { type: String, default: '' },
   date_of_birth: { type: Date },
-  eye_color: { type: String },
-  hair_color: { type: String },
-  hair_length: { type: String },
+  eye_color: { type: String, default: '' },
+  hair_color: { type: String, default: '' },
+  hair_length: { type: String, default: '' },
   weight: { type: Number },
   height_feet: { type: Number },
   height_inch: { type: Number },
@@ -40,7 +40,7 @@ var newSchema = new mongoose.Schema({
     lon: Number,
   }],
   alert: { 
-    text: String 
+    text: String, default: '' 
   },
   last_kitchen_visit: {
     type: Date
@@ -56,5 +56,5 @@ var newSchema = new mongoose.Schema({
   }
 
 }, { timestamps : true });
-mongoose.model('Individuals', newSchema);
+mongoose.model('Individual', newSchema);
 
