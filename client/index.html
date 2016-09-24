@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- DONT FORGET TO ADD YOUR ANGULAR APP! -->
+<html ng-app = "app">
+  <head>
+    <meta charset="utf-8">
+    <title>Friends</title>
+    <!-- 
+        We are importing our angular script as 
+         well as our angular routes script from
+         bower component folder. This will only work 
+         if we set that folder as a static folder 
+         in our server.js file
+     -->
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+
+
+<!-- 
+    After importing angular the file we should be importing is our app.js 
+    file. This file is where we instantiate our angular application as well
+    as pass in our dependencies. For this assignment we will only be injecting 
+    ng router.
+
+    Make sure that as you add new controllers and factories, that we must include
+    a script tag for each one.
+ -->
+
+
+    <script src="app.js"></script>
+
+    <script src="assets/factories/friendsFactory.js"></script>
+
+    <script src="assets/controllers/individual/individualIndexController.js"></script>
+    <script src="assets/controllers/individual/individualEditController.js"></script>
+    <script src="assets/controllers/individual/individualNewController.js"></script>
+    <script src="assets/controllers/individual/individualShowController.js"></script>
+
+  </head>
+  <body>
+    <div ng-view></div>
+    <!-- Links to your new and edit pages here.  Review Angular Partials if you've forgotten ) -->
+    <!-- not so subtle hint: ng-view ??? -->
+  </body>
+</html>
