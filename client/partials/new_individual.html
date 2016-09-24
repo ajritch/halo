@@ -1,0 +1,17 @@
+<div ng-controller="NewIndividual">
+      <p ng-bind="errors.message"></p>
+      <form ng-submit="addIndividual()">
+        <p>First Name: <input type="text" ng-model="new_individual.first_name"></p>
+        <p>Last Name: <input type="text" ng-model="new_individual.last_name"></p>
+        <p>Gender: <input type="text" ng-model="new_individual.gender"></p>
+        <p>Height: ft <input type="text" ng-model="new_individual.height_feet">
+        in <input type="text" ng-model="new_individual.height_inches"></p>
+        <p>Weight:<input type="text" ng-model="new_individual.weight"></p>
+        <p>Eye Color<input type="text" ng-model="new_individual.eyes"></p>
+        <p>Hair Color:<input type="text" ng-model="new_individual.hair"></p>
+        <p>Ethnicity: <input type="text" ng-model="new_individual.ethnicity"></p>
+        <p>Date of Birth: <input type="text" ng-model="new_individual.date_of_birth"></p>
+        <p>Image: <input type="file" ng-model="new_individual.image"></p>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
