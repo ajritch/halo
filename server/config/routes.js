@@ -6,7 +6,7 @@ var individuals = require('../controllers/individuals.js');
 module.exports = function(app) {
   /* CRUD routes for users, only needed ones */
   app.get('/users', users.index);
-  app.get('/users/:username', users.show);
+  app.get('/users/:id', users.show);
   app.post('/users', users.create);
 
   /* CRUD routes for individuals */
