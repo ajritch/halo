@@ -1,8 +1,9 @@
-
 <div class="applicationpage" style="background-image: url('static/images/skybackground.jpg'); background-size: 100% 130%">
-    <h3>&nbsp;Welcome back {{user.username}}</h3>
-     <a href="#/individuals/index"><button>Search</button></a>
-            <a href="#/individuals/new"><button>New Individual</button></a>
+    <h3>&nbsp;Welcome back{{comma}}{{user.username}}!</h3>
+    <div>
+        <a href="#/individuals/index"><span class="navtabs">Search</span></a>
+        <a href=""><span class="navtabs">New</span></a>
+    </div>
     <div class="content bg-white">
       <h1>Add a new Individual</h1>
       <hr>
@@ -37,8 +38,8 @@
                             <option value="Other">Other</option>
                         </select></p>
         <p>Ethnicity:   <select ng-model="new_individual.ethnicity">
-                            <option value="Black">Black</option>
-                            <option value="White">White</option>
+                            <option value="AfricanAmerican">African American</option>
+                            <option value="Caucasian">Caucasian</option>
                             <option value="Hispanic">Hispanic</option>
                             <option value="Asian">Asian</option>
                         </select></p>

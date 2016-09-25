@@ -5,8 +5,10 @@ app.controller('individualIndexController', ['$scope', 'userFactory', 'individua
       $scope.user = data;
       if (!$scope.user.username)
         $scope.user.username = "";
-      else
+      else {
         $scope.user.username = $scope.user.username;
+        $scope.comma = ", ";
+      }
     });
 
 /*

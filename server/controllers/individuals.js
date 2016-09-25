@@ -41,6 +41,17 @@ function Controller() {
       }
     });
   };
+  /* get info for individual by Kairos ID */
+  this.getById = function(req, res) {
+    console.log("server show individual by face API ID", req.params);
+    Individual.findOne({subject_id: req.params.subject_id}, function(err, individual) {
+      if (err) {
+        res.json({status: false, result: err});
+      } else {
+        res.json({status: true});
+      }
+    })
+  };
   /* update an individual */
   this.update = function(req, res) {
     console.log("server update params", req.params);
