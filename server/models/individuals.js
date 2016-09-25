@@ -53,6 +53,9 @@ var newSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+  },
+  subject_id: {
+    type: String,
   }
 
 }, { timestamps : true });
