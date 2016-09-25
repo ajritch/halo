@@ -12,6 +12,7 @@ module.exports = function(app) {
   /* CRUD routes for individuals */
   app.get('/individuals', individuals.index);
   app.get('/individuals/:id', individuals.show);
+  app.get('/individuals/face/:id', individuals.getById) //Kairos API id
   app.post('/individuals', individuals.create);
 }
 
