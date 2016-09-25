@@ -1,20 +1,32 @@
-<h1>Show All Individuals</h1>
-<a href="#/individuals/new"><button>New Individual</button></a>
-<input type="text" name="search" ng-model="searchText">
-<hr>
-<table>
-	<tr >
-		<th>Name</th>
-		<th>Show</th>
-		<th>Update</th>
-		<th>Delete</th>
-		<th></th>
-	</tr>
-	<tr ng-repeat="individual in individuals | filter:searchText">
-		<td>{{individual.firstName}} {{individual.lastName}}</td>
-		<td><a ng-href="#/individuals/{{individual._id}}">Show</a></td>
-		<td><a ng-href="#/individuals/{{individual._id}}/edit">Update</a></td>
-		<td><a href="#" ng-click="delete(individual._id)">Delete</a></td>
-		<td><input type="hidden" value={{individual.birthday}}></td>
-	</tr>
-</table>
+<div id="loginpage" style="background-image: url('static/images/4005651-old-wall-background-Stock-Photo-urban.jpg'); background-size: 100% 130%">
+    <h3>Welcome back{{user.username}}!</h3>
+    <table>
+        <tr class="navtabs">
+            <td><a href="#/individuals/index">Search</a></td>
+            <td><a href="#/individuals/new">New</a></td>
+        </tr>
+    </table>
+    <hr>
+    <div class="bg-white">
+        <h1>Search Individuals</h1>
+        <a href="#/individuals/new"><button>New Individual</button></a>
+        <input type="text" name="search" ng-model="searchText" placeholder="Search individual...">
+        <hr>
+        <table>
+            <tr >
+                <th>Name</th>
+                <th>Show</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="individual in individuals | filter:searchText">
+                <td>{{individual.firstName}} {{individual.lastName}}</td>
+                <td><a ng-href="#/individuals/{{individual._id}}">Show</a></td>
+                <td><a ng-href="#/individuals/{{individual._id}}/edit">Update</a></td>
+                <td><a href="#" ng-click="delete(individual._id)">Delete</a></td>
+                <td><input type="hidden" value={{individual.birthday}}></td>
+            </tr>
+        </table>
+    </div>
+</div>
