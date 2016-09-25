@@ -15,14 +15,13 @@ app.factory('individualsFactory', ['$http', function($http){
     factory.getOneIndividual = function(id, callback){
 
         $http.get("/individuals/"+id).then(function(data){
-            console.log(data)
             individuals = data.data;
             callback(individuals);
         });
     }
 
     factory.createIndividual = function(newIndividual, callback){
-        
+
         $http.post("/individuals", newIndividual).then(function(returned_data){
             if(typeof(callback) == 'function'){
                 callback(returned_data.data);

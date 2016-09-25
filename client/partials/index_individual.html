@@ -15,17 +15,17 @@
         <table>
             <tr >
                 <th>Name</th>
-                <th>Show</th>
-                <th>Update</th>
-                <th>Delete</th>
-                <th></th>
+                <th>Gender</th>
+                <th>Ethnicity</th>
+                <th>Date of Birth</th>
+                <th>Action</th>
             </tr>
             <tr ng-repeat="individual in individuals | filter:searchText">
                 <td>{{individual.first_name}} {{individual.last_name}}</td>
+                <td>{{individual.gender}}</td>
+                <td>{{individual.ethnicity}}</td>
+                <td>{{individual.date_of_birth | date:'MM/dd/yyyy'}}</td>
                 <td><a ng-href="#/individuals/{{individual._id}}">Show</a></td>
-                <td><a ng-href="#/individuals/{{individual._id}}/edit">Update</a></td>
-                <td><a href="#" ng-click="delete(individual._id)">Delete</a></td>
-                <td><input type="hidden" value={{individual.birthday}}></td>
             </tr>
         </table>
     </div>

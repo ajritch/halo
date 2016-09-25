@@ -4,13 +4,42 @@
 	<tr >
 		<th>First Name</th>
 		<th>Last Name</th>
-		<th>Birthday</th>
+		<th>Middle Name</th>
 		
 	</tr>
 	<tr>
-		<td>{{individual.first_name}}</td>
-		<td>{{individual.last_name}}</td>
-		<td>{{individual.date_of_birth | date:'MM/dd/yyyy'}}</td>
+		<td align="center">{{individual.first_name}}</td>
+		<td align="center">{{individual.last_name}}</td>
+		<td align="center">{{individual.middle_name}}</td>
+	</tr>
+	<tr >
+		<th>Alias</th>
+		<th>Ethnicity</th>
+		<th>Date of Birth</th>
+		
+	</tr>
+	<tr>
+		<td align="center">{{individual.alias}}</td>
+		<td align="center">{{individual.ethnicity}}</td>
+		<td align="center">{{individual.date_of_birth | date:'MM/dd/yyyy'}}</td>
+	</tr>
+	<tr >
+		<th>Eyes</th>
+		<th>Hair</th>
+		<th>Gender</th>
+		
+	</tr>
+	<tr>
+		<td align="center">{{individual.eye_color}}</td>
+		<td align="center">{{individual.hair_color}}</td>
+		<td align="center">{{individual.gender}}</td>
+	</tr>
+	<tr >
+		<th>Height</th>
+		<th>Weight</th>
+	</tr>
+	<tr>
+		<td align="center">{{individual.height_feet}}'{{individual.height_inch}}" </td>
+		<td align="center">{{individual.weight}}</td>
 	</tr>
 </table>
-<td><a ng-href="#/individuals">Back to Home</a></td>

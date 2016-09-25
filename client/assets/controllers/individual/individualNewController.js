@@ -7,7 +7,6 @@ app.controller('individualNewController', ['$scope','individualsFactory', '$loca
 */
     $scope.addIndividual = function(){
     	$scope.new_individual.image = $scope.new_individual.image.base64
-    	console.log($scope.new_individual.image)
         individualsFactory.createIndividual($scope.new_individual, function(){
             $location.url("/individuals");
         });
