@@ -1,17 +1,21 @@
-<div ng-controller="NewIndividual">
+<div>
       <p ng-bind="errors.message"></p>
       <form ng-submit="addIndividual()">
         <p>First Name: <input type="text" ng-model="new_individual.first_name"></p>
+        <p>Middle Name: <input type="text" ng-model="new_individual.middle_name"></p>
         <p>Last Name: <input type="text" ng-model="new_individual.last_name"></p>
+        <p>Alias: <input type="text" ng-model="new_individual.alias"></p>
         <p>Gender: <input type="text" ng-model="new_individual.gender"></p>
         <p>Height: ft <input type="text" ng-model="new_individual.height_feet">
-        in <input type="text" ng-model="new_individual.height_inches"></p>
+        in <input type="text" ng-model="new_individual.height_inch"></p>
         <p>Weight:<input type="text" ng-model="new_individual.weight"></p>
-        <p>Eye Color<input type="text" ng-model="new_individual.eyes"></p>
-        <p>Hair Color:<input type="text" ng-model="new_individual.hair"></p>
+        <p>Eye Color<input type="text" ng-model="new_individual.eye_color"></p>
+        <p>Hair Color:<input type="text" ng-model="new_individual.hair_color"></p>
+        <p>Hair Length:<input type="text" ng-model="new_individual.hair_length"></p>
         <p>Ethnicity: <input type="text" ng-model="new_individual.ethnicity"></p>
         <p>Date of Birth: <input type="text" ng-model="new_individual.date_of_birth"></p>
-        <p>Image: <input type="file" ng-model="new_individual.image"></p>
+        <p>Image:  <input type='file' ng-model='new_individual.image' base-sixty-four-input>
+</p>
         <input type="submit" value="Submit">
       </form>
     </div>

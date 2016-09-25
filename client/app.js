@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'base64', 'naif.base64']);
 app.config(function ($routeProvider) {
 // Routes to load your new and edit pages with new and edit controllers attached to them!
     $routeProvider

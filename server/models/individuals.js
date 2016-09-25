@@ -52,7 +52,7 @@ var newSchema = new mongoose.Schema({
     type: Date
   },
   image: {
-    type: String
+    type: String,
   }
 
 }, { timestamps : true });
