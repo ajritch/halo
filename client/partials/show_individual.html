@@ -1,49 +1,57 @@
- <a href="#/individuals/index"><button>Search</button></a>
- <a href="#/individuals/new"><button>New Individual</button></a>
-<h1>Show Individual</h1>
-<div ng-if="individual.image" width="30%">
-<img data-ng-src="{{'data:image/jpg;base64,'+individual.image}}" width="30%" height="auto">
+<div class="applicationpage" style="background-image: url('static/images/skybackground.jpg'); background-size: 100% 130%">    
+    <h3>&nbsp;Welcome back{{comma}}{{user.username}}!<a href="#/" class="logout-btn">Log out</a></h3>
+    <div>
+        <a href="#/individuals/index"><span class="navtabs">Search</span></a>
+        <a href="#/individuals/new"><span class="navtabs">New Individual</span></a>
+    </div>
+    <div class="content bg-white">
+        <h1>Show Individual</h1>
+        <hr>
+        <div ng-if="individual.image" width="30%">
+        <img data-ng-src="{{'data:image/jpg;base64,'+individual.image}}" width="30%" height="auto">
+        </div>
+        <table>
+            <tr >
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Middle Name</th>
+                
+            </tr>
+            <tr>
+                <td align="center">{{individual.first_name}}</td>
+                <td align="center">{{individual.last_name}}</td>
+                <td align="center">{{individual.middle_name}}</td>
+            </tr>
+            <tr >
+                <th>Alias</th>
+                <th>Ethnicity</th>
+                <th>Date of Birth</th>
+                
+            </tr>
+            <tr>
+                <td align="center">{{individual.alias}}</td>
+                <td align="center">{{individual.ethnicity}}</td>
+                <td align="center">{{individual.date_of_birth | date:'MM/dd/yyyy'}}</td>
+            </tr>
+            <tr >
+                <th>Eyes</th>
+                <th>Hair</th>
+                <th>Gender</th>
+                
+            </tr>
+            <tr>
+                <td align="center">{{individual.eye_color}}</td>
+                <td align="center">{{individual.hair_color}}</td>
+                <td align="center">{{individual.gender}}</td>
+            </tr>
+            <tr >
+                <th>Height</th>
+                <th>Weight</th>
+            </tr>
+            <tr>
+                <td align="center">{{individual.height_feet}}'{{individual.height_inch}}" </td>
+                <td align="center">{{individual.weight}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
-<table>
-	<tr >
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Middle Name</th>
-		
-	</tr>
-	<tr>
-		<td align="center">{{individual.first_name}}</td>
-		<td align="center">{{individual.last_name}}</td>
-		<td align="center">{{individual.middle_name}}</td>
-	</tr>
-	<tr >
-		<th>Alias</th>
-		<th>Ethnicity</th>
-		<th>Date of Birth</th>
-		
-	</tr>
-	<tr>
-		<td align="center">{{individual.alias}}</td>
-		<td align="center">{{individual.ethnicity}}</td>
-		<td align="center">{{individual.date_of_birth | date:'MM/dd/yyyy'}}</td>
-	</tr>
-	<tr >
-		<th>Eyes</th>
-		<th>Hair</th>
-		<th>Gender</th>
-		
-	</tr>
-	<tr>
-		<td align="center">{{individual.eye_color}}</td>
-		<td align="center">{{individual.hair_color}}</td>
-		<td align="center">{{individual.gender}}</td>
-	</tr>
-	<tr >
-		<th>Height</th>
-		<th>Weight</th>
-	</tr>
-	<tr>
-		<td align="center">{{individual.height_feet}}'{{individual.height_inch}}" </td>
-		<td align="center">{{individual.weight}}</td>
-	</tr>
-</table>
