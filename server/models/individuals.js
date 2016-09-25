@@ -52,10 +52,7 @@ var newSchema = new mongoose.Schema({
     type: Date
   },
   image: {
-    filetype: String,
-    filename: String,
-    filesize: Number,
-    base64: String
+    type: String,
   }
 
 }, { timestamps : true });

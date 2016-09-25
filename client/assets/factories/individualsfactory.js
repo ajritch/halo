@@ -22,8 +22,6 @@ app.factory('individualsFactory', ['$http', function($http){
     }
 
     factory.createIndividual = function(newIndividual, callback){
-        console.log("!!!!!!!!!!!!!!!!!!!!");
-        console.log(newIndividual.first_name);
         
         $http.post("/individuals", newIndividual).then(function(returned_data){
             if(typeof(callback) == 'function'){
