@@ -1,5 +1,16 @@
-app.controller('individualShowController', ['$scope','individualsFactory', '$location', '$routeParams', '$base64',
-	function($scope, individualsFactory, $location, routeParams, $base64) {
+app.controller('individualShowController', ['$scope', 'userFactory', 'individualsFactory', '$location', '$routeParams', '$base64',
+	function($scope, userFactory, individualsFactory, $location, routeParams, $base64) {
+    $scope.user = {};
+    
+    userFactory.getUser(function(data) {
+      $scope.user = data;
+      if (!$scope.user.username)
+        $scope.user.username = "";
+      else {
+        $scope.user.username = $scope.user.username;
+        $scope.comma = ", ";
+      }
+    });
 
     $scope.show = function(){
         individualsFactory.getOneIndividual(routeParams.id, function(data){

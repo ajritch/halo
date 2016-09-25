@@ -19,6 +19,9 @@
     display: inline-block;
     vertical-align: top;
 }
+.logout-btn {
+    padding-left: 82%;
+}
 
 .navtabs{
     width: 30em;

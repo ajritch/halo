@@ -1,13 +1,13 @@
 <div class="applicationpage" style="background-image: url('static/images/skybackground.jpg'); background-size: 100% 130%">
-    <h3>&nbsp;Welcome back{{comma}}{{user.username}}!</h3>
+    <h3>&nbsp;Welcome back{{comma}}{{user.username}}!<a href="#/" class="logout-btn">Log out</a></h3>
     <div>
         <a href=""><span class="navtabs">Search</span></a>
-        <a href="#/individuals/new"><span class="navtabs">New</span></a>
+        <a href="#/individuals/new"><span class="navtabs">New Individual</span></a>
     </div>
     <div class="content bg-white">
         <h1>Search Individuals</h1>
-        <label>Any: <input ng-model="search.$"></label> <br>
-        <label>Name: <input ng-model="search.first_name"></label><input ng-model="search.last_name"></label><br>
+        <label>Search Any: <input ng-model="search.$" placeholder="Search any field..."></label> <br> 
+        <label>Search by Name: <input ng-model="search.first_name" placeholder="First name"></label>&nbsp;<input ng-model="search.last_name" placeholder="Last name"></label><br>
         <hr>
         <table>
             <tr >
