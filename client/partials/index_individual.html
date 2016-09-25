@@ -8,17 +8,22 @@
 
     <div class="content bg-white">
         <h1>Search Individuals</h1>
-        <input type="text" name="search" ng-model="searchText" placeholder="Search individual...">
+        <label>Any: <input ng-model="search.$"></label> <br>
+        <label>Name: <input ng-model="search.first_name"></label><input ng-model="search.last_name"></label><br>
         <hr>
         <table>
             <tr >
-                <th>Name</th>
+                <th><a href = '' ng-click = "sortType = 'last_name'; sortReverse = !sortReverse">Name</a>
+                        <span ng-show = "sortType == 'last_name' && !sortReverse">v</span>
+                        <span ng-show = "sortType == 'last_name' && sortReverse">^</span></th>
                 <th>Gender</th>
                 <th>Ethnicity</th>
-                <th>Date of Birth</th>
+                <th><a href = '' ng-click = "sortType = 'date_of_birth'; sortReverse = !sortReverse">Date of Birth</a>
+                        <span ng-show = "sortType == 'date_of_birth' && !sortReverse">v</span>
+                        <span ng-show = "sortType == 'date_of_birth' && sortReverse">^</span></th>
                 <th>Action</th>
             </tr>
-            <tr ng-repeat="individual in individuals | filter:searchText">
+            <tr ng-repeat="individual in individuals | filter:search:strict | orderBy:sortType:sortReverse track by $index">
                 <td>{{individual.first_name}} {{individual.last_name}}</td>
                 <td>{{individual.gender}}</td>
                 <td>{{individual.ethnicity}}</td>
