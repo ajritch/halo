@@ -5,13 +5,14 @@ app.controller('individualIndexController', ['$scope','individualsFactory', '$lo
 */
     $scope.index = function(){
         individualsFactory.getAllIndividuals(function(returnedData){
-            $scope.individuals = returnedData;
-            console.log($scope.individuals);
+
+            $scope.individuals = returnedData.result;
+            
         });
     };
     $scope.delete = function(individual_id){
         individualsFactory.deleteIndividual(individual_id, function(){
-          console.log("individual deleted");
+          
         });
         $scope.index();
     };

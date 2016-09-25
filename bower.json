@@ -16,6 +16,12 @@
   ],
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "angular-base64": "latest",
+    "angular-base64-upload": "latest"
+
   }
 }
+
+
+

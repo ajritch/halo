@@ -1,8 +1,9 @@
-app.controller('individualShowController', ['$scope','individualsFactory', '$location', '$routeParams', function($scope, individualsFactory, $location, routeParams) {
+app.controller('individualShowController', ['$scope','individualsFactory', '$location', '$routeParams', '$base64',
+	function($scope, individualsFactory, $location, routeParams, $base64) {
 
     $scope.show = function(){
         individualsFactory.getOneIndividual(routeParams.id, function(data){
-            $scope.individual = data;
+            $scope.individual = data.result;
         });
     };
     $scope.show();

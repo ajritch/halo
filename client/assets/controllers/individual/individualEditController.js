@@ -6,7 +6,7 @@ app.controller('individualEditController', ['$scope','individualsFactory', '$loc
         });
     };
     individualsFactory.getOneIndividual(routeParams.id, function(data){
-    	console.log(data.birthday);
+    	
         data.birthday = new Date(data.birthday);
 		$scope.individual = data;
 	});

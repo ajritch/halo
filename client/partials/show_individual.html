@@ -4,11 +4,13 @@
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Birthday</th>
+		<th>IMAGE</th>
 	</tr>
 	<tr>
 		<td>{{individual.firstName}}</td>
 		<td>{{individual.lastName}}</td>
 		<td>{{individual.birthday}}</td>
+		<img data-ng-src="{{'data:image/jpg;base64,'+individual.image.base64}}">
 	</tr>
 </table>
 <td><a ng-href="#/individuals">Back to Home</a></td>
