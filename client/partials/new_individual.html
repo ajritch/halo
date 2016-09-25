@@ -5,15 +5,37 @@
         <p>Middle Name: <input type="text" ng-model="new_individual.middle_name"></p>
         <p>Last Name: <input type="text" ng-model="new_individual.last_name"></p>
         <p>Alias: <input type="text" ng-model="new_individual.alias"></p>
-        <p>Gender: <input type="text" ng-model="new_individual.gender"></p>
+        <p>Gender:      <select ng-model="new_individual.gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select></p>
         <p>Height: ft <input type="text" ng-model="new_individual.height_feet">
         in <input type="text" ng-model="new_individual.height_inch"></p>
         <p>Weight:<input type="text" ng-model="new_individual.weight"></p>
-        <p>Eye Color<input type="text" ng-model="new_individual.eye_color"></p>
-        <p>Hair Color:<input type="text" ng-model="new_individual.hair_color"></p>
-        <p>Hair Length:<input type="text" ng-model="new_individual.hair_length"></p>
-        <p>Ethnicity: <input type="text" ng-model="new_individual.ethnicity"></p>
-        <p>Date of Birth: <input type="text" ng-model="new_individual.date_of_birth"></p>
+        <p>Eye Color:    <select ng-model="new_individual.eye_color">
+                            <option value="Blue">Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Green">Green</option>
+                            <option value="Hazel">Hazel</option>
+                            <option value="Grey">Grey</option>
+                            <option value="Other">Other</option>
+                        </select></p>
+        <p>Hair Color:<select ng-model="new_individual.hair_color">
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Red">Red</option>
+                            <option value="Blonde">Blonde</option>
+                            <option value="Grey">Grey</option>
+                            <option value="White">White</option>
+                            <option value="Other">Other</option>
+                        </select></p>
+        <p>Ethnicity:   <select ng-model="new_individual.ethnicity">
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Hispanic">Hispanic</option>
+                            <option value="Asian">Asian</option>
+                        </select></p>
+        <p>Date of Birth: <input type="date" ng-model="new_individual.date_of_birth"></p>
         <p>Image:  <input type='file' ng-model='new_individual.image' base-sixty-four-input>
 </p>
         <input type="submit" value="Submit">
