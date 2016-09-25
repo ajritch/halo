@@ -1,4 +1,5 @@
 app.controller('individualIndexController', ['$scope', 'userFactory', 'individualsFactory', '$location', function($scope, userFactory, individualsFactory, $location) {
+    
     $scope.user = {};
     
     userFactory.getUser(function(data) {

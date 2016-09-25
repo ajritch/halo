@@ -2,6 +2,7 @@ console.log("server individuals controller");
 
 var mongoose = require('mongoose');
 var Individual = mongoose.model('Individual');
+var Kairos = require('kairos-api');
 
 function Controller() {
   /* get all results for individuals */
@@ -22,14 +23,42 @@ function Controller() {
     req.body.date_of_birth = new Date(req.body.date_of_birth);
     console.log("server individual create body: ", req.body);
     var result = new Individual(req.body);
-    result.save(function(err) {
+    var client = new Kairos('id', 'key');
+ 
+var params = {
+  image: req.body.image,
+  subject_id: req.body.subject_id,
+  gallery_name: 'HALOFACES',
+  selector: 'SETPOSE'
+};
+ 
+client.enroll(params)// return Promise
+  //  result: {
+  //    status: <http status code>,
+  //    body: <data>
+  //  }
+  .then(function(result2) { 
+  result.save(function(err) {
       if (err) {
+        console.log("!!!!!!!!!!!!!!!!!!!!!!failuresaving")
+        console.log(err)
         res.json({ status: false, result: err });
       } else {
+        console.log("!!!!!!!!!!!!!!!!!!!!!!successsaving")
+        console.log(result2.body.images)
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!endsuccess")
         res.json({ status: true, result: result });
       }
     });
-  };
+})
+  // err -> array: jsonschema validate errors
+  //        or throw Error
+  .catch(function(err) { 
+    console.log("!!!!!!!!!!!!!!!!!!!!!!failureenrolling")
+        console.log(err)
+    res.json({ status: false, result: err });
+  });
+},
   /* get info for one individual */
   this.show = function(req, res) {
     console.log("server individuals show", req.params);
