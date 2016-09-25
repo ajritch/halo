@@ -1,8 +1,15 @@
 <div class="applicationpage" style="background-image: url('static/images/skybackground.jpg'); background-size: 100% 130%">    
-    <h3>&nbsp;Welcome back{{comma}}{{user.username}}!<a href="#/" class="logout-btn">Log out</a></h3>
-    <div>
-        <a href="#/individuals/index"><span class="navtabs">Search</span></a>
-        <a href="#/individuals/new"><span class="navtabs">New Individual</span></a>
+    <div class="navbar">
+        <img class="navelements" src="static/images/halo-logo-large.png"  width="105" height="87" >
+        <span class="navelements">
+            <h3 style="width: 45em">&nbsp;Welcome back{{comma}}{{user.username}}!
+            <div align="right"><a href="#/" class="logout-btn">Log out</a></div>
+            </h3>
+            <div>
+                <a href="#/individuals/index"><span class="navtabs">Search</span></a>
+                <a href="#/individuals/new"><span class="navtabs">New Individual</span></a>
+            </div>
+        </span>
     </div>
     <div class="content bg-white">
         <h1>Show Individual</h1>
