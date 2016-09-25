@@ -19,6 +19,7 @@ function Controller() {
   };
   /* add one individual */
   this.create = function(req, res) {
+    req.body.date_of_birth = new Date(req.body.date_of_birth);
     console.log("server individual create body: ", req.body);
     var result = new Individual(req.body);
     result.save(function(err) {

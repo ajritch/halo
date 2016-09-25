@@ -6,7 +6,9 @@ app.controller('individualNewController', ['$scope','individualsFactory', '$loca
   Want to all of the individuals when we get back?  We can re-run index.
 */
     $scope.addIndividual = function(){
-    	$scope.new_individual.image = $scope.new_individual.image.base64
+        if ($scope.new_individual.image) {
+    	      $scope.new_individual.image = $scope.new_individual.image.base64
+        }
         individualsFactory.createIndividual($scope.new_individual, function(){
             $location.url("/individuals/index");
         });
