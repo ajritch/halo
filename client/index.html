@@ -21,7 +21,22 @@
     <script src="assets/controllers/individual/individualEditController.js"></script>
     <script src="assets/controllers/individual/individualNewController.js"></script>
     <script src="assets/controllers/individual/individualShowController.js"></script>
+    <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-y: scroll;
+}
 
+th, td {
+    text-align: left;
+    font-family: arial;
+    font-size: 20px;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
   </head>
   <body>
     <div ng-view></div>
