@@ -3,10 +3,12 @@ app.factory('userFactory', function($http){
     var factory = {}
 
     factory.getUser = function(callback) {
+        //console.log("retrieving user:", _user);
         callback(_user);
     }
 
     factory.setUser = function(user, callback){
+        console.log("setting user:", user);
         _user = user;
         callback(_user);
         // $http.post('/users', user).then(function(data){
