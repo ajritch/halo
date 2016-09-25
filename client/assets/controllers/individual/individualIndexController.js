@@ -1,4 +1,15 @@
-app.controller('individualIndexController', ['$scope','individualsFactory', '$location', function($scope, individualsFactory, $location) {
+app.controller('individualIndexController', ['$scope', 'userFactory', 'individualsFactory', '$location', function($scope, userFactory, individualsFactory, $location) {
+    $scope.user = {};
+    
+    userFactory.getUser(function(data) {
+      $scope.user = data;
+      console.log("$scope.user", $scope.user);
+      if (!$scope.user.username)
+        $scope.user.username = "";
+      else
+        $scope.user.username = ", " + $scope.user.username;
+    });
+
 /*
   THIS INDEX METHOD ACCESSES THE IndividualS FACTORY AND RUNS THE IndividualS INDEX.
   WE MIGHT RE USE INDEX A FEW TIMES, SO TO MINIMIZE REPETITION WE SET IT AS A VARIABLE.

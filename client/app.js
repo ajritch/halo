@@ -4,6 +4,10 @@ app.config(function ($routeProvider) {
     $routeProvider
     
     .when('/', {
+        templateUrl: '/partials/login.html',
+        controller: 'loginController'
+    })
+    .when('/individuals/index', {
         templateUrl: '/partials/index_individual.html',
         controller: 'individualIndexController'
     })

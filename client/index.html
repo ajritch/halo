@@ -11,12 +11,11 @@
          if we set that folder as a static folder 
          in our server.js file
      -->
+    <link rel="stylesheet" type="text/css" href="static/style.css">
     <script src="angular/angular.js"></script>
     <script src="angular-route/angular-route.js"></script>
     <script src="angular-base64/angular-base64.js"></script>
     <script src="angular-base64-upload/src/angular-base64-upload.js"></script>
-
-
 <!-- 
     After importing angular the file we should be importing is our app.js 
     file. This file is where we instantiate our angular application as well
@@ -26,12 +25,12 @@
     Make sure that as you add new controllers and factories, that we must include
     a script tag for each one.
  -->
-
-
     <script src="app.js"></script>
 
+    <script src="assets/factories/userFactory.js"></script>
     <script src="assets/factories/individualsFactory.js"></script>
 
+    <script src="assets/controllers/loginController.js"></script>
     <script src="assets/controllers/individual/individualIndexController.js"></script>
     <script src="assets/controllers/individual/individualEditController.js"></script>
     <script src="assets/controllers/individual/individualNewController.js"></script>
@@ -39,7 +38,6 @@
 
   </head>
   <body>
-  <a href="#/individuals/new">NEW</a>
     <div ng-view></div>
     <!-- Links to your new and edit pages here.  Review Angular Partials if you've forgotten ) -->
     <!-- not so subtle hint: ng-view ??? -->
