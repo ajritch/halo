@@ -1,0 +1,45 @@
+#loginpage {
+    width: 105%;
+    height: 55em;
+    background-color: #444; 
+    border: 1px solid black;
+    margin: -1em;
+}
+
+.loginpage-divs {
+    height: 10em; 
+    border-radius: 0.8em; 
+    margin-top: 15em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.navtabs td {
+    border: 0.2em solid black;
+    padding: 0.7em 3em;
+}
+
+body {
+    font-family: Verdana;
+   /* font-family: Lucida Console;*/
+    font-size: 0.75em
+    /*font-variant: small-caps;*/
+}
+
+.align-vert-center {
+    display: block; 
+    margin: 0 auto;
+}
+
+.transparent-80pct {
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.maindiv {
+    ;
+}
