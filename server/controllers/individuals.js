@@ -48,7 +48,7 @@ function Controller() {
       if (err) {
         res.json({status: false, result: err});
       } else {
-        res.json({status: true});
+        res.json(individual);
       }
     })
   };
