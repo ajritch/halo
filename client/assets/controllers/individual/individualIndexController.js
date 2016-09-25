@@ -6,7 +6,7 @@ app.controller('individualIndexController', ['$scope', 'userFactory', 'individua
       if (!$scope.user.username)
         $scope.user.username = "";
       else
-        $scope.user.username = ", " + $scope.user.username;
+        $scope.user.username = $scope.user.username;
     });
 
 /*
