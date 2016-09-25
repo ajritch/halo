@@ -73,11 +73,11 @@ client.enroll(params)// return Promise
   /* get info for individual by Kairos ID */
   this.getById = function(req, res) {
     console.log("server show individual by face API ID", req.params);
-    Individual.findOne({subject_id: req.params.subject_id}, function(err, individual) {
+    Individual.findOne({subject_id: req.params.id}, function(err, individual) {
       if (err) {
         res.json({status: false, result: err});
       } else {
-        res.json(individual);
+        res.json({first_name: individual.first_name, last_name: individual.last_name, gender: individual.gender, weight: individual.weight, height_inches: individual.height_inch, height_feet: individual.height_feet});
       }
     })
   };
