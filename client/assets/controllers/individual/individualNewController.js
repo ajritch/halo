@@ -1,5 +1,15 @@
-app.controller('individualNewController', ['$scope','individualsFactory', '$location', '$base64', 
-	function($scope, individualsFactory, $location, $base64) {
+app.controller('individualNewController', ['$scope', 'userFactory', 'individualsFactory', '$location', '$base64', 
+	function($scope, userFactory, individualsFactory, $location, $base64) {
+    $scope.user = {};
+    
+    userFactory.getUser(function(data) {
+      $scope.user = data;
+      if (!$scope.user.username)
+        $scope.user.username = "";
+      else
+        $scope.user.username = $scope.user.username;
+    });
+
 /*
   OUR $scope.create function goes here <-- $scope because we need to access this method 
   with ng-submit or ng-click (from the form in the previous assignment).  

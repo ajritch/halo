@@ -1,5 +1,11 @@
-<div>
-    <a ng-href="#/individuals/index"><button>Back to Home</button></a>
+
+<div class="applicationpage" style="background-image: url('static/images/skybackground.jpg'); background-size: 100% 130%">
+    <h3>&nbsp;Welcome back {{user.username}}</h3>
+     <a href="#/individuals/index"><button>Search</button></a>
+            <a href="#/individuals/new"><button>New Individual</button></a>
+    <div class="content bg-white">
+      <h1>Add a new Individual</h1>
+      <hr>
       <p ng-bind="errors.message"></p>
       <form ng-submit="addIndividual()">
         <p>First Name: <input type="text" ng-model="new_individual.first_name"></p>
@@ -37,8 +43,8 @@
                             <option value="Asian">Asian</option>
                         </select></p>
         <p>Date of Birth: <input type="date" ng-model="new_individual.date_of_birth"></p>
-        <p>Image:  <input type='file' ng-model='new_individual.image' base-sixty-four-input>
-</p>
+        <p>Image:  <input type='file' ng-model='new_individual.image' base-sixty-four-input></p>
         <input type="submit" value="Submit">
       </form>
     </div>
+</div>

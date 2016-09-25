@@ -1,8 +1,13 @@
 <div class="applicationpage" style="background-image: url('static/images/skybackground.jpg'); background-size: 100% 130%">
-    <h3>&nbsp;Welcome back{{user.username}}!</h3>
+
+    <h3>&nbsp;Welcome back {{user.username}}</h3>
+    
+            <a href="#/individuals/index"><button>Search</button></a>
+            <a href="#/individuals/new"><button>New Individual</button></a>
+        
+
     <div class="content bg-white">
         <h1>Search Individuals</h1>
-        <a href="#/individuals/new"><button>New Individual</button></a>
         <input type="text" name="search" ng-model="searchText" placeholder="Search individual...">
         <hr>
         <table>
