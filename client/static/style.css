@@ -21,6 +21,7 @@
 }
 
 .navtabs{
+    width: 30em;
     border: 0.2em solid black;
     padding: 0.7em 3em;
 }
