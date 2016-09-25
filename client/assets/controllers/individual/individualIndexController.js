@@ -3,7 +3,6 @@ app.controller('individualIndexController', ['$scope', 'userFactory', 'individua
     
     userFactory.getUser(function(data) {
       $scope.user = data;
-      console.log("$scope.user", $scope.user);
       if (!$scope.user.username)
         $scope.user.username = "";
       else
@@ -28,6 +27,7 @@ app.controller('individualIndexController', ['$scope', 'userFactory', 'individua
         $scope.index();
     };
     $scope.index();
+
 /*
   OUR $scope.create function goes here <-- $scope because we need to access this method 
   with ng-submit or ng-click (from the form in the previous assignment).  
