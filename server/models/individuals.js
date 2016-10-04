@@ -14,7 +14,7 @@ var newSchema = new mongoose.Schema({
   hair_length: { type: String, default: '' },
   weight: { type: Number },
   height_feet: { type: Number },
-  height_inch: { type: Number },
+  height_inch: { type: Number, default: 0 }, //otherwise nothing returned!
   notes_medical: [{
     userid: Number,
     text: String,

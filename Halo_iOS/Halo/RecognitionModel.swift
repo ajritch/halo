@@ -11,7 +11,7 @@ import UIKit
 
 //TAKE THESE OUT BEFORE GITHUB!!! :)
 var app_id = "99481d3a"  //insert id
-var app_key = "405111b99cafc94ee4ef79f6edcd9a9b" //insert key
+var app_key = "d6969f887be0078262a82c74bad835a3" //insert key
 
 class RecognitionModel {
     
@@ -35,7 +35,7 @@ class RecognitionModel {
             do {
                 //encode and pass image over JSON
                 let encodedImage = encodeImage(image)
-                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(["image":encodedImage, "gallery_name":"HALOFACES"], options: .PrettyPrinted)
+                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(["image":encodedImage, "gallery_name":"halofaces"], options: .PrettyPrinted)
                 let session = NSURLSession.sharedSession()
                 let task = session.dataTaskWithRequest(request, completionHandler: completionHandler)
                 task.resume()
@@ -59,7 +59,7 @@ class RecognitionModel {
             //encode and pass image over json
             do {
                 let encodedImage = encodeImage(image)
-                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(["image":encodedImage, "gallery_name":"HALOFACES", "subject_id":andId, "selector":"SETPOSE"], options: .PrettyPrinted)
+                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(["image":encodedImage, "gallery_name":"halofaces", "subject_id":andId, "selector":"SETPOSE"], options: .PrettyPrinted)
                 let session = NSURLSession.sharedSession()
                 let task = session.dataTaskWithRequest(request, completionHandler: completionHandler)
                 task.resume()

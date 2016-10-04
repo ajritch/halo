@@ -18,47 +18,64 @@ function Controller() {
       }
     });
   };
-  /* add one individual */
+
+  //iPhone
   this.create = function(req, res) {
-    req.body.date_of_birth = new Date(req.body.date_of_birth);
-    console.log("server individual create body: ", req.body);
-    var result = new Individual(req.body);
-    var client = new Kairos('id', 'key');
+     req.body.date_of_birth = new Date(req.body.date_of_birth);
+     console.log("server individual create body: ", req.body);
+     var result = new Individual(req.body);
+     result.save(function(err) {
+       if (err) {
+         res.json({ status: false, result: err });
+       } else {
+         res.json({ status: true, result: result });
+       }
+     });
+   };
+
+//WHEN ENROLLING INTO API FROM PC
+//   /* add one individual */
+//   this.create = function(req, res) {
+//     req.body.date_of_birth = new Date(req.body.date_of_birth);
+//     console.log("server individual create body: ", req.body);
+//     var result = new Individual(req.body);
+//     var client = new Kairos('id', 'key');
  
-var params = {
-  image: req.body.image,
-  subject_id: req.body.subject_id,
-  gallery_name: 'HALOFACES',
-  selector: 'SETPOSE'
-};
+// var params = {
+//   image: req.body.image,
+//   subject_id: req.body.subject_id,
+//   gallery_name: 'HALOFACES',
+//   selector: 'SETPOSE'
+// };
  
-client.enroll(params)// return Promise
-  //  result: {
-  //    status: <http status code>,
-  //    body: <data>
-  //  }
-  .then(function(result2) { 
-  result.save(function(err) {
-      if (err) {
-        console.log("!!!!!!!!!!!!!!!!!!!!!!failuresaving")
-        console.log(err)
-        res.json({ status: false, result: err });
-      } else {
-        console.log("!!!!!!!!!!!!!!!!!!!!!!successsaving")
-        console.log(result2.body.images)
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!endsuccess")
-        res.json({ status: true, result: result });
-      }
-    });
-})
-  // err -> array: jsonschema validate errors
-  //        or throw Error
-  .catch(function(err) { 
-    console.log("!!!!!!!!!!!!!!!!!!!!!!failureenrolling")
-        console.log(err)
-    res.json({ status: false, result: err });
-  });
-},
+// client.enroll(params)// return Promise
+//   //  result: {
+//   //    status: <http status code>,
+//   //    body: <data>
+//   //  }
+//   .then(function(result2) { 
+//   result.save(function(err) {
+//       if (err) {
+//         console.log("!!!!!!!!!!!!!!!!!!!!!!failuresaving")
+//         console.log(err)
+//         res.json({ status: false, result: err });
+//       } else {
+//         console.log("!!!!!!!!!!!!!!!!!!!!!!successsaving")
+//         console.log(result2.body.images)
+//         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!endsuccess")
+//         res.json({ status: true, result: result });
+//       }
+//     });
+// })
+//   // err -> array: jsonschema validate errors
+//   //        or throw Error
+//   .catch(function(err) { 
+//     console.log("!!!!!!!!!!!!!!!!!!!!!!failureenrolling")
+//         console.log(err)
+//     res.json({ status: false, result: err });
+//   });
+// },
+
   /* get info for one individual */
   this.show = function(req, res) {
     console.log("server individuals show", req.params);
@@ -77,6 +94,7 @@ client.enroll(params)// return Promise
       if (err) {
         res.json({status: false, result: err});
       } else {
+        console.log(individual)
         res.json({first_name: individual.first_name, last_name: individual.last_name, gender: individual.gender, weight: individual.weight, height_inches: individual.height_inch, height_feet: individual.height_feet});
       }
     })

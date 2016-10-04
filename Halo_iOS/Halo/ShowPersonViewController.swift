@@ -77,11 +77,11 @@ class ShowPersonViewController: UIViewController {
                     if let weight = results["weight"] as? Int {
                         self.weightLabel.text = "\(weight) lbs"
                     }
-//                    if let height_inches = results["height_inches"] as? String {
+                    if let height_inches = results["height_inches"] as? Int {
                         if let height_feet = results["height_feet"] as? Int {
-                            self.heightLabel.text = "\(height_feet)' \(5)\""
+                            self.heightLabel.text = "\(height_feet)' \(height_inches)\""
                         }
-//                    }
+                    }
                 }
                 self.hideLoadingOverlay()
             } catch {
