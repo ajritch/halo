@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 //TAKE THESE OUT BEFORE GITHUB!!! :)
-var app_id = "99481d3a"  //insert id
-var app_key = "d6969f887be0078262a82c74bad835a3" //insert key
+var app_id = ""  //insert id
+var app_key = "" //insert key
 
 class RecognitionModel {
     
